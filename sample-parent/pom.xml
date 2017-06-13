@@ -14,7 +14,7 @@
     <groupId>com.b3dgs.sample</groupId>
     <artifactId>sample-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Sample Project</name>
     <description>Sample project</description>
     <url>https://github.com/b3dgs/sample</url>

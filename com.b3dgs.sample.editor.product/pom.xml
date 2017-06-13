@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.b3dgs.sample</groupId>
         <artifactId>sample-parent</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath>../sample-parent</relativePath>
     </parent>
     <artifactId>com.b3dgs.sample.editor.product</artifactId>
