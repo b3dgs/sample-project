@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <properties>
         <buildtools-project>sample-buildtools</buildtools-project>
-        <lionengine.version>8.4.0</lionengine.version>
+        <lionengine.version>8.4.1</lionengine.version>
     </properties>
     <parent>
         <groupId>com.b3dgs</groupId>
         <artifactId>b3dgs-parent</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
     </parent>
     <groupId>com.b3dgs.sample</groupId>
     <artifactId>sample-parent</artifactId>
