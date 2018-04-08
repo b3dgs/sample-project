@@ -19,8 +19,8 @@ package com.b3dgs.sample;
 
 import com.b3dgs.lionengine.Config;
 import com.b3dgs.lionengine.LionEngineException;
-import com.b3dgs.lionengine.core.awt.EngineAwt;
-import com.b3dgs.lionengine.core.sequence.Loader;
+import com.b3dgs.lionengine.awt.graphic.EngineAwt;
+import com.b3dgs.lionengine.graphic.engine.Loader;
 
 /**
  * Program starts here.
@@ -32,7 +32,7 @@ public final class AppSamplePc
      * 
      * @param args The arguments (none).
      */
-    public static void main(String[] args)
+    public static void main(String[] args) // CHECKSTYLE IGNORE LINE: TrailingComment|UncommentedMain
     {
         EngineAwt.start(Constant.NAME, Constant.VERSION, AppSamplePc.class);
         Loader.start(Config.windowed(Constant.NATIVE.get2x()), Scene.class);

@@ -38,6 +38,14 @@ public class Activator implements BundleActivator
         return context;
     }
 
+    /**
+     * Constructor.
+     */
+    public Activator()
+    {
+        super();
+    }
+
     /*
      * BundleActivator
      */

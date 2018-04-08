@@ -11,13 +11,6 @@
     <artifactId>sample-game</artifactId>
     <name>Sample Game</name>
     <packaging>jar</packaging>
-    <dependencies>
-        <dependency>
-            <groupId>com.b3dgs.lionengine</groupId>
-            <artifactId>lionengine-core-awt</artifactId>
-            <version>${lionengine.version}</version>
-        </dependency>
-    </dependencies>
     <build>
         <plugins>
             <plugin>

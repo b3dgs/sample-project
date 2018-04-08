@@ -21,7 +21,6 @@
         <dependency>
             <groupId>com.b3dgs.sample</groupId>
             <artifactId>sample-game</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
     <build>

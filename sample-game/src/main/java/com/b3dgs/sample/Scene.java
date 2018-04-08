@@ -20,8 +20,6 @@ package com.b3dgs.sample;
 import com.b3dgs.lionengine.Align;
 import com.b3dgs.lionengine.Context;
 import com.b3dgs.lionengine.game.feature.SequenceGame;
-import com.b3dgs.lionengine.game.feature.Services;
-import com.b3dgs.lionengine.game.feature.WorldGame;
 import com.b3dgs.lionengine.graphic.ColorRgba;
 import com.b3dgs.lionengine.graphic.Graphic;
 import com.b3dgs.lionengine.graphic.Graphics;
@@ -34,7 +32,7 @@ import com.b3dgs.lionengine.graphic.TextStyle;
 public class Scene extends SequenceGame
 {
     /** Text. */
-    private final Text text = Graphics.createText(Text.SANS_SERIF, 20, TextStyle.NORMAL);
+    private final Text text = Graphics.createText(com.b3dgs.lionengine.Constant.FONT_SANS_SERIF, 20, TextStyle.NORMAL);
 
     /**
      * Create the scene.
@@ -43,14 +41,7 @@ public class Scene extends SequenceGame
      */
     public Scene(Context context)
     {
-        super(context, Constant.NATIVE, new WorldCreator()
-        {
-            @Override
-            public WorldGame createWorld(Context context, Services services)
-            {
-                return new World(context, services);
-            }
-        });
+        super(context, Constant.NATIVE, (context1, services) -> new World(context1, services));
     }
 
     @Override

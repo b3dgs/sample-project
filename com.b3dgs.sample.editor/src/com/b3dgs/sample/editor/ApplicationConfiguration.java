@@ -50,6 +50,14 @@ public class ApplicationConfiguration
     @Inject private MApplication application;
 
     /**
+     * Constructor.
+     */
+    public ApplicationConfiguration()
+    {
+        super();
+    }
+
+    /**
      * Execute the injection.
      * 
      * @param eventBroker The event broker service.
@@ -85,7 +93,7 @@ public class ApplicationConfiguration
             {
                 if (ARG_IMPORT.equals(args[i]))
                 {
-                    i++;
+                    i++; // CHECKSTYLE IGNORE LINE: TrailingComment|ModifiedControlVariable
                     if (i < args.length)
                     {
                         importProject(args[i]);
