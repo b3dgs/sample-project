@@ -11,6 +11,9 @@
     <artifactId>sample-game</artifactId>
     <name>Sample Game</name>
     <packaging>jar</packaging>
+    <properties>
+        <checkstyle.skip>true</checkstyle.skip>
+    </properties>
     <build>
         <plugins>
             <plugin>
