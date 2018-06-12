@@ -19,7 +19,6 @@ package com.b3dgs.sample;
 
 import java.io.IOException;
 
-import com.b3dgs.lionengine.Context;
 import com.b3dgs.lionengine.game.feature.Services;
 import com.b3dgs.lionengine.game.feature.WorldGame;
 import com.b3dgs.lionengine.io.FileReading;
@@ -33,12 +32,11 @@ public final class World extends WorldGame
     /**
      * Create world.
      * 
-     * @param context The context reference.
      * @param services The services reference.
      */
-    public World(Context context, Services services)
+    public World(Services services)
     {
-        super(context, services);
+        super(services);
     }
 
     @Override
