@@ -1,27 +1,9 @@
-# Sample project
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-<table>
-    <tr>
-        <td>
-            <a href="#" border="1"><img src="#"/></a>
-        </td>
-        <td>
-            <h4 align="center">Summary</h4>
-            <div align="left">
-                <ul>
-                    <li><a href="#presentation">Presentation</a></li>
-                    <li><a href="#general-features">General features</a></li>
-                    <li><a href="#screenshots">Screenshots</a></li>
-                    <li><a href="#downloads">Downloads</a></li>
-                </ul>
-            </div>
-        </td>
-    </tr>
-</table>
+| [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) | Sample Project | [Presentation](#presentation)<br>[General features](#general-features)<br>[Download](#downloads)<br>[Screenshots](#screenshots) |
+|:---|:---:|---:|
 
 ## Presentation
 
-[Sample project](#) is a __Sample project__, showing a quick start of a LionEngine game.
+[__Sample project__](#) is a project example, showing a quick start of a LionEngine game.
 
 ## General features
 
@@ -34,9 +16,4 @@
 
 ## Screenshots
 
-| [![img](#)](#)
---- | --- | ---
-
 ## Downloads
-
-* Coming soon !
