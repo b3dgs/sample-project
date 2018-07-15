@@ -27,7 +27,7 @@ import com.b3dgs.lionengine.io.FileWriting;
 /**
  * World game base.
  */
-public final class World extends WorldGame
+final class World extends WorldGame
 {
     /**
      * Create world.

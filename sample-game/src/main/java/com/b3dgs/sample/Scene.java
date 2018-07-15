@@ -29,9 +29,8 @@ import com.b3dgs.lionengine.graphic.TextStyle;
 /**
  * Game scene implementation.
  */
-public class Scene extends SequenceGame
+final class Scene extends SequenceGame
 {
-    /** Text. */
     private final Text text = Graphics.createText(com.b3dgs.lionengine.Constant.FONT_SANS_SERIF, 20, TextStyle.NORMAL);
 
     /**
