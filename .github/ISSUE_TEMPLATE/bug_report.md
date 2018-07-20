@@ -1,3 +1,9 @@
+---
+name: Bug report
+about: Create a report to help us improve
+
+---
+
 ## Expected Behavior
 
 
@@ -12,6 +18,6 @@
 
 ## Specifications
 
-  - LionEngine Version:
+  - Sample Project Version:
   - JDK:
   - OS:
