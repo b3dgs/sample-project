@@ -1,4 +1,4 @@
-| [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) | Sample Project | [Presentation](#presentation)<br>[General features](#general-features)<br>[Download](#downloads)<br>[Screenshots](#screenshots) |
+| [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) | Sample Project | [Presentation](#presentation)<br>[General features](#general-features)<br>[Screenshots](#screenshots)<br>[Download](#downloads) |
 |:---|:---:|---:|
 
 ## Presentation
