@@ -24,14 +24,13 @@ import com.b3dgs.lionengine.graphic.ColorRgba;
 import com.b3dgs.lionengine.graphic.Graphic;
 import com.b3dgs.lionengine.graphic.Graphics;
 import com.b3dgs.lionengine.graphic.Text;
-import com.b3dgs.lionengine.graphic.TextStyle;
 
 /**
  * Game scene implementation.
  */
 final class Scene extends SequenceGame
 {
-    private final Text text = Graphics.createText(com.b3dgs.lionengine.Constant.FONT_SANS_SERIF, 20, TextStyle.NORMAL);
+    private final Text text = Graphics.createText(20);
 
     /**
      * Create the scene.
