@@ -1,16 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Sample Target Platform" sequenceNumber="24">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="Sample Project Editor Target Platform" sequenceNumber="24">
 <locations>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.jdt.source.feature.group" version="3.12.3.v20170301-0400"/>
-<unit id="org.eclipse.equinox.sdk.feature.group" version="3.12.0.v20170209-1843"/>
-<unit id="org.eclipse.rcp.feature.group" version="4.6.3.v20170301-0400"/>
-<repository location="http://download.eclipse.org/eclipse/updates/4.6"/>
-</location>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="com.b3dgs.lionengine.core.swt" version="8.4.0"/>
-<unit id="com.b3dgs.lionengine.editor" version="8.4.0"/>
-<repository location="jar:file:/C:/Users/DjThunder/git/lionengine/com.b3dgs.lionengine.repository/target/com.b3dgs.lionengine.repository-8.4.0.zip!/"/>
-</location>
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+        <unit id="org.eclipse.equinox.sdk.feature.group" version="3.17.0.v20190305-2225"/>
+        <unit id="org.eclipse.jdt.source.feature.group" version="3.17.0.v20190307-0500"/>
+        <unit id="org.eclipse.rcp.feature.group" version="4.11.0.v20190307-0500"/>
+        <repository location="http://download.eclipse.org/eclipse/updates/4.11"/>
+        <unit id="org.eclipse.platform.ide" version="4.11.0.I20190307-0500"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+        <unit id="org.eclipse.swtbot.eclipse.feature.group" version="2.7.0.201806111355"/>
+        <unit id="org.eclipse.swtbot.eclipse.test.junit.feature.group" version="2.7.0.201806111355"/>
+        <unit id="org.eclipse.swtbot.feature.group" version="2.7.0.201806111355"/>
+        <unit id="org.eclipse.swtbot.ide.feature.group" version="2.7.0.201806111355"/>
+        <repository location="http://download.eclipse.org/technology/swtbot/releases/2.7.0/"/>
+    </location>
+    <location path="C:\Users\DjThunder\git\sample-project\com.b3dgs.sample.editor.repository\target\repository" type="Directory"/>
 </locations>
 </target>
