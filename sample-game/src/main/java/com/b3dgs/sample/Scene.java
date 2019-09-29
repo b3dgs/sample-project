@@ -27,7 +27,7 @@ import com.b3dgs.lionengine.graphic.Text;
 /**
  * Game scene implementation.
  */
-final class Scene extends SequenceGame
+public final class Scene extends SequenceGame
 {
     private final Text text = Graphics.createText(20);
 
