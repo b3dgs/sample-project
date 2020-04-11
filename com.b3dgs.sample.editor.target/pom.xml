@@ -1,13 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.b3dgs.sample</groupId>
-        <artifactId>sample-parent</artifactId>
-        <version>1.0.0</version>
-        <relativePath>../sample-parent</relativePath>
+        <groupId>com.b3dgs.sample.editor</groupId>
+        <artifactId>sample-editor-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../sample-editor-parent</relativePath>
     </parent>
-    <artifactId>com.b3dgs.sample.platform</artifactId>
+    <artifactId>com.b3dgs.sample.editor.target</artifactId>
     <packaging>eclipse-target-definition</packaging>
     <name>Sample Target Platform</name>
     <build>

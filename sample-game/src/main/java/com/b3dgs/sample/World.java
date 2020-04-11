@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2019 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
+ * Copyright (C) 2013-2020 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,17 +16,13 @@
  */
 package com.b3dgs.sample;
 
-import java.io.IOException;
-
 import com.b3dgs.lionengine.game.feature.Services;
-import com.b3dgs.lionengine.game.feature.WorldGame;
-import com.b3dgs.lionengine.io.FileReading;
-import com.b3dgs.lionengine.io.FileWriting;
+import com.b3dgs.lionengine.helper.WorldHelper;
 
 /**
  * World game base.
  */
-final class World extends WorldGame
+final class World extends WorldHelper
 {
     /**
      * Create world.
@@ -36,17 +32,5 @@ final class World extends WorldGame
     public World(Services services)
     {
         super(services);
-    }
-
-    @Override
-    protected void saving(FileWriting file) throws IOException
-    {
-        // Nothing to do
-    }
-
-    @Override
-    protected void loading(FileReading file) throws IOException
-    {
-        // Nothing to do
     }
 }
