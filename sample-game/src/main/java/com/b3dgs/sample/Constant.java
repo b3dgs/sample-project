@@ -28,7 +28,7 @@ public final class Constant
     /** Application name. */
     public static final String NAME = "Sample Project";
     /** Application version. */
-    public static final Version VERSION = Version.create(0, 1, 0);
+    public static final Version VERSION = Version.create(1, 0, 0);
     /** Native resolution. */
     public static final Resolution NATIVE = new Resolution(240, 400, 60);
 

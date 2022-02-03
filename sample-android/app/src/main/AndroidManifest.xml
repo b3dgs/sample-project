@@ -2,23 +2,34 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.b3dgs.sample"
     android:versionCode="100"
-    android:versionName="1.0.0" >
+    android:versionName="1.0.0">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 
     <application
-        android:hardwareAccelerated="true"
+        android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="Sample Project"
         android:largeHeap="true"
-        android:allowBackup="false"
-        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        <activity android:name=".android.ActivitySample" android:screenOrientation="portrait" >
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        <activity
+            android:name=".android.ActivitySample"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.b3dgs.com"
+                    android:scheme="http" />
+            </intent-filter>
         </activity>
     </application>
-
 </manifest>

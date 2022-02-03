@@ -1,22 +1,41 @@
 apply plugin: 'com.android.application'
 
 android {
-    buildToolsVersion '28.0.3'
-    compileSdkVersion 28
+    signingConfigs {
+        app {
+            storeFile file(property('keystore'))
+            keyAlias property('keystore.alias')
+            keyPassword property('keystore.password')
+            storePassword property('keystore.storepassword')
+        }
+    }
+    compileSdkVersion 31
+    buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId "com.b3dgs.sample"
         minSdkVersion 26
-        targetSdkVersion 28
+        targetSdkVersion 31
+        signingConfig signingConfigs.app
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.app
+        }
+        debug {
+            signingConfig signingConfigs.app
         }
     }
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'jniLibs'
+        }
     }
 }
 
@@ -25,7 +44,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.b3dgs.lionengine:lionengine-core:9.0.2'
-    implementation 'com.b3dgs.lionengine:lionengine-core-android:9.0.2'
-    implementation 'com.b3dgs.sample:sample-game:1.0.0'
+    implementation 'com.b3dgs:b3dgs-parent:2.0.0-SNAPSHOT'
+    implementation 'com.b3dgs.lionengine:lionengine-core:10.0.0-SNAPSHOT'
+    implementation 'com.b3dgs.lionengine:lionengine-core-android:10.0.0-SNAPSHOT'
+    implementation 'com.b3dgs.sample:sample-game:1.0.0-SNAPSHOT'
 }
