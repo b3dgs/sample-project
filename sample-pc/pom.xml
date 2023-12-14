@@ -38,7 +38,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.b3dgs.sample.AppSamplePc</mainClass>
+                            <mainClass>com.b3dgs.sample.pc.AppSample</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

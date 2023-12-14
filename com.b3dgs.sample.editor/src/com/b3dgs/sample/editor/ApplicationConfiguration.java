@@ -75,7 +75,7 @@ public class ApplicationConfiguration
     /**
      * Handler called on startup complete.
      */
-    private class AppStartupCompleteEventHandler implements EventHandler
+    private static final class AppStartupCompleteEventHandler implements EventHandler
     {
         /**
          * Constructor.

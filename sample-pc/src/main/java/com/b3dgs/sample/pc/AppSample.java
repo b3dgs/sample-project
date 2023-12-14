@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2022 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
+ * Copyright (C) 2013-2023 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,17 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-package com.b3dgs.sample;
+package com.b3dgs.sample.pc;
 
 import com.b3dgs.lionengine.Config;
 import com.b3dgs.lionengine.LionEngineException;
 import com.b3dgs.lionengine.awt.graphic.EngineAwt;
 import com.b3dgs.lionengine.graphic.engine.Loader;
+import com.b3dgs.sample.Constant;
+import com.b3dgs.sample.Scene;
 
 /**
  * Program starts here.
  */
-public final class AppSamplePc
+public final class AppSample
 {
     /**
      * Main function.
@@ -33,14 +35,14 @@ public final class AppSamplePc
      */
     public static void main(String[] args) // CHECKSTYLE IGNORE LINE: TrailingComment|UncommentedMain
     {
-        EngineAwt.start(Constant.PROGRAM_NAME, Constant.PROGRAM_VERSION, AppSamplePc.class);
+        EngineAwt.start(Constant.PROGRAM_NAME, Constant.PROGRAM_VERSION, AppSample.class);
         Loader.start(Config.windowed(Constant.NATIVE.get2x()), Scene.class);
     }
 
     /**
      * Private constructor.
      */
-    private AppSamplePc()
+    private AppSample()
     {
         throw new LionEngineException(LionEngineException.ERROR_PRIVATE_CONSTRUCTOR);
     }

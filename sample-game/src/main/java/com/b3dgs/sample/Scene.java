@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2022 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
+ * Copyright (C) 2013-2023 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ public final class Scene extends SequenceGame<World>
     public void update(double extrp)
     {
         super.update(extrp);
-        text.setText("FPS = " + String.valueOf(getFps()));
+        text.setText("FPS = " + getFps());
     }
 
     @Override
@@ -61,7 +61,7 @@ public final class Scene extends SequenceGame<World>
     {
         super.render(g);
         g.clear(0, 0, getWidth(), getHeight());
-        text.draw(g, getWidth() / 2, 20, Align.CENTER, "Hello World");
+        text.draw(g, getWidth() / 2, getHeight() / 3, Align.CENTER, "Hello World");
         text.render(g);
     }
 }

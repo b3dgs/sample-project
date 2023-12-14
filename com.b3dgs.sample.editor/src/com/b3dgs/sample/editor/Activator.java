@@ -35,18 +35,6 @@ public class Activator implements BundleActivator
     public static final String PLUGIN_WEBSITE = "https://www.b3dgs.com";
     /** Plugin ID. */
     public static final String PLUGIN_ID = "com.b3dgs.sample.editor";
-    /** Context reference. */
-    private static BundleContext context;
-
-    /**
-     * Get the context reference.
-     * 
-     * @return The context reference.
-     */
-    public static BundleContext getContext()
-    {
-        return context;
-    }
 
     /**
      * Constructor.
@@ -63,12 +51,12 @@ public class Activator implements BundleActivator
     @Override
     public void start(BundleContext bundleContext) throws Exception
     {
-        context = bundleContext;
+        // Start
     }
 
     @Override
     public void stop(BundleContext bundleContext) throws Exception
     {
-        context = null;
+        // Stop
     }
 }
