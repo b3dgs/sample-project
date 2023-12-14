@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?>
-<target name="Sample Project Editor Target Platform" sequenceNumber="24">
-<locations>
-    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-        <unit id="org.eclipse.equinox.sdk.feature.group" version="3.20.300.v20200828-1034"/>
-        <unit id="org.eclipse.jdt.source.feature.group" version="3.18.500.v20200902-1800"/>
-        <unit id="org.eclipse.rcp.feature.group" version="4.17.0.v20200902-1800"/>
-        <repository location="http://download.eclipse.org/eclipse/updates/4.17"/>
-        <unit id="org.eclipse.platform.ide" version="4.17.0.I20200902-1800"/>
-    </location>
-    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-        <unit id="org.eclipse.swtbot.eclipse.feature.group" version="3.0.0.202006031738"/>
-        <unit id="org.eclipse.swtbot.eclipse.test.junit.feature.group" version="3.0.0.202006031738"/>
-        <unit id="org.eclipse.swtbot.feature.group" version="3.0.0.202006031738"/>
-        <unit id="org.eclipse.swtbot.ide.feature.group" version="3.0.0.202006031738"/>
-        <repository location="http://download.eclipse.org/technology/swtbot/releases/3.0.0/"/>
-    </location>
-    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-        <repository location="file:/C:/Users/DjThunder/git/lionengine-editor/com.b3dgs.lionengine.editor.repository/target/repository/"/>
-        <unit id="com.b3dgs.lionengine.editor" version="9.0.5.202011142141"/>
-    </location>
-</locations>
+<target name="Sample Editor Target Platform">
+    <locations>
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+            <unit id="org.eclipse.equinox.sdk.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.jdt.source.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.rcp.feature.group" version="0.0.0"/>
+            <repository location="https://download.eclipse.org/eclipse/updates/4.9/"/>
+        </location>
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+            <unit id="org.eclipse.swtbot.eclipse.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.swtbot.eclipse.test.junit.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.swtbot.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.swtbot.ide.feature.group" version="0.0.0"/>
+            <repository location="http://download.eclipse.org/technology/swtbot/releases/4.1.0/"/>
+        </location>
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+            <repository location="https://lionengine.b3dgs.com/repository"/>
+            <unit id="com.b3dgs.lionengine.core" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.core.swt" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.editor" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.editor.animation" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.editor.collision" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.editor.map" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.editor.object" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.editor.pathfinding" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.game" version="0.0.0"/>
+            <unit id="com.b3dgs.lionengine.helper" version="0.0.0"/>
+        </location>
+    </locations>
 </target>

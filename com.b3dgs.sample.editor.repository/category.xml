@@ -30,9 +30,9 @@
    <bundle id="com.b3dgs.sample.game">
       <category name="com.b3dgs.sample"/>
    </bundle>
-   <category-def name="com.b3dgs.sample" label="Sample Project Plugins">
+   <category-def name="com.b3dgs.sample" label="Sample Plugins">
       <description>
-         Plugins dedicated to application compatible with Sample Project.
+         Plugins dedicated to application compatible with Sample.
       </description>
    </category-def>
 </site>

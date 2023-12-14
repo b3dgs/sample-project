@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.b3dgs</groupId>
@@ -9,10 +11,14 @@
     <groupId>com.b3dgs.sample</groupId>
     <artifactId>sample-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Sample Project</name>
+    <name>Sample Parent</name>
     <packaging>pom</packaging>
-    <description>Sample project</description>
+    <description>Sample Parent</description>
     <url>https://github.com/b3dgs/sample-project</url>
+    <modules>
+        <module>../sample-assets</module>
+        <module>../sample-game</module>
+    </modules>
     <organization>
         <name>Byron 3D Games Studio</name>
         <url>www.b3dgs.com</url>
@@ -24,49 +30,11 @@
         <tag>HEAD</tag>
     </scm>
     <properties>
-        <checkstyle.skip>true</checkstyle.skip>
         <lionengine.version>10.0.0-SNAPSHOT</lionengine.version>
         <radial.base-package>com.b3dgs.sample</radial.base-package>
+        <checkstyle.skip>true</checkstyle.skip>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/../sample-pc/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>Maven Repository</name>
-            <layout>default</layout>
-            <url>https://repo1.maven.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>snapshots</id>
-            <name>Snapshot Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>central-plugins</id>
-            <name>Releases Plugin Repository</name>
-            <url>https://repo1.maven.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>snapshots-plugins</id>
-            <name>Snapshot Plugin Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
     <dependencies>
         <dependency>
             <groupId>com.b3dgs.lionengine</groupId>
@@ -84,22 +52,88 @@
             <version>${lionengine.version}</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <phase>none</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
     <profiles>
         <profile>
             <id>game</id>
+        </profile>
+        <profile>
+            <id>all</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
-                <module>../sample-game</module>
+                <module>../sample-pc</module>
+                <module>../com.b3dgs.sample.editor.target</module>
+                <module>../com.b3dgs.sample.editor</module>
+                <module>../com.b3dgs.sample.editor.test</module>
+                <module>../com.b3dgs.sample.editor.repository</module>
+                <module>../com.b3dgs.sample.editor.product</module>
             </modules>
+            <properties>
+                <sample-pc-excludes>b3dgs-buildtools</sample-pc-excludes>
+            </properties>
         </profile>
         <profile>
-            <id>pc</id>
-            <modules>
-                <module>../sample-game</module>
-                <module>../sample-pc</module>
-            </modules>
+            <id>sonar</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonarsource.scanner.maven</groupId>
+                        <artifactId>sonar-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>sign</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jarsigner-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.eclipse.tycho</groupId>
+                        <artifactId>tycho-gpg-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>

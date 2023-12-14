@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
+ * Copyright (C) 2013-2023 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,11 +19,22 @@ package com.b3dgs.sample.editor;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
+import com.b3dgs.lionengine.Version;
+import com.b3dgs.sample.Constant;
+
 /**
  * Plugin activator.
  */
 public class Activator implements BundleActivator
 {
+    /** Plugin name. */
+    public static final String PLUGIN_NAME = Constant.PROGRAM_NAME + " Editor";
+    /** Plugin version. */
+    public static final Version PLUGIN_VERSION = Constant.PROGRAM_VERSION;
+    /** Plugin website. */
+    public static final String PLUGIN_WEBSITE = "https://www.b3dgs.com";
+    /** Plugin ID. */
+    public static final String PLUGIN_ID = "com.b3dgs.sample.editor";
     /** Context reference. */
     private static BundleContext context;
 

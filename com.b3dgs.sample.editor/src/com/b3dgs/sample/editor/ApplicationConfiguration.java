@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
+ * Copyright (C) 2013-2023 Byron 3D Games Studio (www.b3dgs.com) Pierre-Alexandre (contact@b3dgs.com)
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,8 +29,9 @@ import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.e4.ui.workbench.UIEvents;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.b3dgs.lionengine.Verbose;
 import com.b3dgs.lionengine.editor.dialog.project.ProjectImportHandler;
 import com.b3dgs.lionengine.editor.project.Project;
 import com.b3dgs.lionengine.editor.project.ProjectFactory;
@@ -44,6 +45,8 @@ public class ApplicationConfiguration
     public static final String PLUGIN_NAME = "Sample Editor";
     /** Import project argument. */
     private static final String ARG_IMPORT = "-import";
+    /** Logger. */
+    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfiguration.class);
 
     /** Application reference. */
     @Inject private MApplication application;
@@ -116,7 +119,7 @@ public class ApplicationConfiguration
             }
             catch (final IOException exception)
             {
-                Verbose.exception(exception);
+                LOGGER.error("importProject error", exception);
             }
         }
 

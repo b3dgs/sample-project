@@ -33,7 +33,7 @@ public final class AppSamplePc
      */
     public static void main(String[] args) // CHECKSTYLE IGNORE LINE: TrailingComment|UncommentedMain
     {
-        EngineAwt.start(Constant.NAME, Constant.VERSION, AppSamplePc.class);
+        EngineAwt.start(Constant.PROGRAM_NAME, Constant.PROGRAM_VERSION, AppSamplePc.class);
         Loader.start(Config.windowed(Constant.NATIVE.get2x()), Scene.class);
     }
 

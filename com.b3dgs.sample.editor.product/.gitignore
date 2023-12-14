@@ -1,2 +1,3 @@
 /target
-org.eclipse.jdt.core.prefs
+/.m2
+/.settings
