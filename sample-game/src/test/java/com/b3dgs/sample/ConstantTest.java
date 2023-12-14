@@ -16,7 +16,9 @@
  */
 package com.b3dgs.sample;
 
-import org.junit.jupiter.api.Assertions;
+import static com.b3dgs.lionengine.UtilAssert.assertPrivateConstructor;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 /**
@@ -25,12 +27,21 @@ import org.junit.jupiter.api.Test;
 final class ConstantTest
 {
     /**
+     * Test the constructor.
+     */
+    @Test
+    void testConstructorPrivate()
+    {
+        assertPrivateConstructor(Constant.class);
+    }
+
+    /**
      * Test all.
      */
     @Test
     void testAll()
     {
-        Assertions.assertEquals("Sample", Constant.PROGRAM_NAME);
-        Assertions.assertEquals("1.0.0", Constant.PROGRAM_VERSION.toString());
+        assertEquals("Sample", Constant.PROGRAM_NAME);
+        assertEquals("1.0.0", Constant.PROGRAM_VERSION.toString());
     }
 }
