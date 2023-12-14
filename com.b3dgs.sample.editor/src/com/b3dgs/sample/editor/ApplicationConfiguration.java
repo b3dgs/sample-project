@@ -48,44 +48,6 @@ public class ApplicationConfiguration
     /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfiguration.class);
 
-    /**
-     * Import a project from a path.
-     * 
-     * @param projectPath The project path.
-     */
-    private static void importProject(String projectPath)
-    {
-        final File path = new File(projectPath);
-        try
-        {
-            final Project project = ProjectFactory.create(path.getCanonicalFile());
-            ProjectImportHandler.importProject(project);
-        }
-        catch (final IOException exception)
-        {
-            LOGGER.error("importProject error", exception);
-        }
-    }
-
-    /**
-     * Check if there is a project to import.
-     */
-    private static void checkProjectImport()
-    {
-        final String[] args = Platform.getApplicationArgs();
-        for (int i = 0; i < args.length; i++)
-        {
-            if (ARG_IMPORT.equals(args[i]))
-            {
-                i++; // CHECKSTYLE IGNORE LINE: TrailingComment|ModifiedControlVariable
-                if (i < args.length)
-                {
-                    importProject(args[i]);
-                }
-            }
-        }
-    }
-
     /** Application reference. */
     private final MApplication application;
 
@@ -120,6 +82,44 @@ public class ApplicationConfiguration
      */
     private static final class AppStartupCompleteEventHandler implements EventHandler
     {
+        /**
+         * Import a project from a path.
+         * 
+         * @param projectPath The project path.
+         */
+        private static void importProject(String projectPath)
+        {
+            final File path = new File(projectPath);
+            try
+            {
+                final Project project = ProjectFactory.create(path.getCanonicalFile());
+                ProjectImportHandler.importProject(project);
+            }
+            catch (final IOException exception)
+            {
+                LOGGER.error("importProject error", exception);
+            }
+        }
+
+        /**
+         * Check if there is a project to import.
+         */
+        private static void checkProjectImport()
+        {
+            final String[] args = Platform.getApplicationArgs();
+            for (int i = 0; i < args.length; i++)
+            {
+                if (ARG_IMPORT.equals(args[i]))
+                {
+                    i++; // CHECKSTYLE IGNORE LINE: TrailingComment|ModifiedControlVariable
+                    if (i < args.length)
+                    {
+                        importProject(args[i]);
+                    }
+                }
+            }
+        }
+
         /**
          * Constructor.
          */

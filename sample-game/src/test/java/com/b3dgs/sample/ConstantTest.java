@@ -22,13 +22,13 @@ import org.junit.jupiter.api.Test;
 /**
  * Test {@link Constant}.
  */
-public class ConstantTest
+final class ConstantTest
 {
     /**
      * Test all.
      */
     @Test
-    public void testAll()
+    void testAll()
     {
         Assertions.assertEquals("Sample", Constant.PROGRAM_NAME);
         Assertions.assertEquals("1.0.0", Constant.PROGRAM_VERSION.toString());
