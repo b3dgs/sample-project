@@ -27,7 +27,7 @@ import com.b3dgs.lionengine.graphic.Text;
 /**
  * Game scene implementation.
  */
-public final class Scene extends SequenceGame<World>
+public class Scene extends SequenceGame<World>
 {
     private final Text text = Graphics.createText(20);
 
@@ -46,7 +46,7 @@ public final class Scene extends SequenceGame<World>
     {
         text.setAlign(Align.CENTER);
         text.setColor(ColorRgba.WHITE);
-        text.setLocation(getWidth() / 2, getHeight() / 2);
+        text.setLocation(getWidth() / 2.0, getHeight() / 2.0);
     }
 
     @Override
@@ -61,7 +61,7 @@ public final class Scene extends SequenceGame<World>
     {
         super.render(g);
         g.clear(0, 0, getWidth(), getHeight());
-        text.draw(g, getWidth() / 2, getHeight() / 3, Align.CENTER, "Hello World");
+        text.draw(g, getWidth() / 2, com.b3dgs.lionengine.Constant.HUNDRED, Align.CENTER, "Hello World");
         text.render(g);
     }
 }

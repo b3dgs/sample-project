@@ -48,15 +48,58 @@ public class ApplicationConfiguration
     /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfiguration.class);
 
+    /**
+     * Import a project from a path.
+     * 
+     * @param projectPath The project path.
+     */
+    private static void importProject(String projectPath)
+    {
+        final File path = new File(projectPath);
+        try
+        {
+            final Project project = ProjectFactory.create(path.getCanonicalFile());
+            ProjectImportHandler.importProject(project);
+        }
+        catch (final IOException exception)
+        {
+            LOGGER.error("importProject error", exception);
+        }
+    }
+
+    /**
+     * Check if there is a project to import.
+     */
+    private static void checkProjectImport()
+    {
+        final String[] args = Platform.getApplicationArgs();
+        for (int i = 0; i < args.length; i++)
+        {
+            if (ARG_IMPORT.equals(args[i]))
+            {
+                i++; // CHECKSTYLE IGNORE LINE: TrailingComment|ModifiedControlVariable
+                if (i < args.length)
+                {
+                    importProject(args[i]);
+                }
+            }
+        }
+    }
+
     /** Application reference. */
-    @Inject private MApplication application;
+    private final MApplication application;
 
     /**
      * Constructor.
+     * 
+     * @param application The application reference.
      */
-    public ApplicationConfiguration()
+    @Inject
+    public ApplicationConfiguration(MApplication application)
     {
         super();
+
+        this.application = application;
     }
 
     /**
@@ -83,44 +126,6 @@ public class ApplicationConfiguration
         AppStartupCompleteEventHandler()
         {
             super();
-        }
-
-        /**
-         * Check if there is a project to import.
-         */
-        private void checkProjectImport()
-        {
-            final String[] args = Platform.getApplicationArgs();
-            for (int i = 0; i < args.length; i++)
-            {
-                if (ARG_IMPORT.equals(args[i]))
-                {
-                    i++; // CHECKSTYLE IGNORE LINE: TrailingComment|ModifiedControlVariable
-                    if (i < args.length)
-                    {
-                        importProject(args[i]);
-                    }
-                }
-            }
-        }
-
-        /**
-         * Import a project from a path.
-         * 
-         * @param projectPath The project path.
-         */
-        private void importProject(String projectPath)
-        {
-            final File path = new File(projectPath);
-            try
-            {
-                final Project project = ProjectFactory.create(path.getCanonicalFile());
-                ProjectImportHandler.importProject(project);
-            }
-            catch (final IOException exception)
-            {
-                LOGGER.error("importProject error", exception);
-            }
         }
 
         @Override
