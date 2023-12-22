@@ -9,8 +9,8 @@
 
 * #### __Target__
 >  * Uses the [__LionEngine__](http://www.b3dgs.com/v7/page.php?lang=en&section=lionengine)
->  * Requires Java 8
->  * Multiplatform (tested on Windows, Linux, Android O)
+>  * Requires Java 17
+>  * Multiplatform (tested on Windows, Linux, Android API 21)
 >  * Need at least 16MB of RAM
 >  * Need at least 4MB of free disk space
 
