@@ -44,10 +44,6 @@ public class Activator implements BundleActivator
         super();
     }
 
-    /*
-     * BundleActivator
-     */
-
     @Override
     public void start(BundleContext bundleContext) throws Exception
     {
