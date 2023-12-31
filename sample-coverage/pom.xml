@@ -18,6 +18,11 @@
             <artifactId>sample-game</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.b3dgs.sample</groupId>
+            <artifactId>sample-pc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 		<dependency>
             <groupId>com.b3dgs.sample.editor</groupId>
             <artifactId>com.b3dgs.sample.editor</artifactId>

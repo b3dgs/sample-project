@@ -13,11 +13,33 @@
     <packaging>jar</packaging>
     <name>Sample PC</name>
     <properties>
-        <jdk.version>17</jdk.version>
-        <jdk-release.version>${jdk.version}</jdk-release.version>
         <checkstyle.skip>true</checkstyle.skip>
+        <log4j2.version>2.22.1</log4j2.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.b3dgs.lionengine</groupId>
+            <artifactId>lionengine-core</artifactId>
+            <version>${lionengine.version}</version>
+            <classifier>tests</classifier>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.b3dgs.lionengine</groupId>
             <artifactId>lionengine-core-awt</artifactId>
