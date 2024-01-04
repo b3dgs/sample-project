@@ -1,9 +1,9 @@
-| [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) | Sample Project | [Presentation](#presentation)<br>[General features](#general-features)<br>[Screenshots](#screenshots)<br>[Download](#downloads) |
+| ![Dev](https://img.shields.io/badge/dev-v1.0.0%20SNAPSHOT-yellow.svg?style=flat)<br>[![Build](https://github.com/b3dgs/sample-project/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/b3dgs/sample-project/actions/workflows/build.yml)<br>[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=b3dgs_sample-project&metric=coverage)](https://sonarcloud.io/summary/new_code?id=b3dgs_sample-project)<br>[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=b3dgs_sample-project&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=b3dgs_sample-project)<br>[![License](https://img.shields.io/github/license/b3dgs/lionengine)](/LICENSE) | Sample Project | [Presentation](#presentation)<br>[General features](#general-features)<br>[Screenshots](#screenshots)<br>[Download](#downloads) |
 |:---|:---:|---:|
 
 ## Presentation
 
-[__Sample project__](#) is a project example, showing a quick start of a LionEngine game.
+__Sample project__ is a project example, showing a quick start of a LionEngine game.
 
 ## General features
 
@@ -17,3 +17,5 @@
 ## Screenshots
 
 ## Downloads
+
+* Coming soon !
