@@ -14,7 +14,7 @@
     <name>Sample PC</name>
     <properties>
         <checkstyle.skip>true</checkstyle.skip>
-        <log4j2.version>2.22.1</log4j2.version>
+        <log4j2.version>2.25.3</log4j2.version>
     </properties>
     <dependencies>
         <dependency>
