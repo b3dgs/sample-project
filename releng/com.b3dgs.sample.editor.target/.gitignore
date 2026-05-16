@@ -1,0 +1,5 @@
+/bin
+/target
+/.m2
+/.settings
+com.b3dgs.sample.editor.target.target

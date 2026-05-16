@@ -1,0 +1,69 @@
+name: CI/CD
+
+on:
+   push:
+      branches:
+      - master
+      paths:
+      - .github/workflows/ci-cd.yml
+      - assets/**
+      - coverage/**
+      - java/**
+      - plugins/**
+      - releng/**
+      - tests/**
+      - pom.xml
+   pull_request:
+      branches:
+      - master
+
+jobs:
+   build:
+      strategy:
+         fail-fast: false
+         matrix:
+            os:
+            - ubuntu-latest
+            - windows-latest
+
+      runs-on: ${{ matrix.os }}
+      env:
+         AUDIODEV: 'null'
+      steps:
+
+      -  name: Checkout
+         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+         with:
+            fetch-depth: 0
+            fetch-tags: false
+
+      -  name: Cache Maven
+         uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7
+         with:
+            path: ~/.m2/repository
+            key: maven-${{ hashFiles('**/pom.xml') }}
+            restore-keys: maven-
+
+      -  name: Java
+         uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
+         with:
+            java-version: 25
+            distribution: temurin
+
+      -  name: Windows
+         if: matrix.os == 'windows-latest'
+         run: mvn verify -B -Pall "-Djdk.xml.totalEntitySizeLimit=10000000" "-Djdk.xml.maxGeneralEntitySizeLimit=10000000"
+
+      -  name: Linux
+         if: matrix.os == 'ubuntu-latest'
+         env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+         run: |-
+            sudo apt-get update && sudo apt-get install -y xvfb libasound2-dev alsa-utils
+            xvfb-run -a mvn verify sonar:sonar -B -P "all,sonar" \
+               -Djdk.xml.totalEntitySizeLimit=10000000 \
+               -Djdk.xml.maxGeneralEntitySizeLimit=10000000 \
+               -Dsonar.host.url=https://sonarcloud.io \
+               -Dsonar.organization=b3dgs \
+               -Dsonar.token=$SONAR_TOKEN \
+               -Dsonar.projectKey=b3dgs_sample-project

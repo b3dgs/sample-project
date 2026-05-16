@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.b3dgs.sample</groupId>
+        <artifactId>sample</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+    <groupId>com.b3dgs.sample.editor</groupId>
+    <artifactId>aggregator</artifactId>
+    <packaging>pom</packaging>
+    <name>Aggregator</name>
+    <modules>
+        <module>../../releng/com.b3dgs.sample.editor.target</module>
+        <module>../../plugins/com.b3dgs.sample.editor</module>
+        <module>../com.b3dgs.sample.editor.product</module>
+    </modules>
+    <profiles>
+        <profile>
+            <id>all</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>../com.b3dgs.sample.editor.repository</module>
+                <module>../../tests/com.b3dgs.sample.editor.test</module>
+            </modules>
+            <properties>
+                <sample-pc-excludes>b3dgs-buildtools</sample-pc-excludes>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+        </profile>
+    </profiles>
+</project>
